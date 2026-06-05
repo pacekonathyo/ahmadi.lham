@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="https://github.githubassets.com/assets/github-css-1234567890.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% feed_meta %}
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Header -->
+        <header>
+            <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+                <h1>{{ site.title }}</h1>
+                <p>{{ site.description }}</p>
+                
+                <!-- Main Navigation -->
+                <nav style="margin-top: 20px;">
+                    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}style="font-weight: bold; color: #0366d6;"{% endif %}>Profil</a>
+                    <a href="{{ '/publikasi' | relative_url }}" {% if page.url contains 'publikasi' %}style="font-weight: bold; color: #0366d6;"{% endif %}>Publikasi</a>
+                    <a href="{{ '/proyek' | relative_url }}" {% if page.url contains 'proyek' %}style="font-weight: bold; color: #0366d6;"{% endif %}>Proyek</a>
+                    <a href="{{ '/blog' | relative_url }}" {% if page.url contains 'blog' %}style="font-weight: bold; color: #0366d6;"{% endif %}>Blog</a>
+                    <a href="{{ '/kontak' | relative_url }}" {% if page.url contains 'kontak' %}style="font-weight: bold; color: #0366d6;"{% endif %}>Kontak</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+            {{ content }}
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+                <p>
+                    © 2024 {{ site.author }}. 
+                    <a href="https://github.com/pacekonathyo/ahmadi.lham" target="_blank">GitHub Repository</a> | 
+                    <a href="https://pages.github.com/" target="_blank">Powered by GitHub Pages</a>
+                </p>
+                <p>Last updated: {{ site.time | date: "%d %B %Y" }}</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
