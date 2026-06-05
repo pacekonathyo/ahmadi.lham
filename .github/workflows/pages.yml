@@ -30,7 +30,7 @@ jobs:
             bundle install
             bundle exec jekyll build -d ./_site
           else
-            gem install jekyll jekyll-feed jekyll-sitemap bundler
+            gem install jekyll jekyll-feed jekyll-sitemap jekyll-theme-cayman bundler
             jekyll build -d ./_site
           fi
 
