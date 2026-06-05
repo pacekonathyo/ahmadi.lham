@@ -1,0 +1,27 @@
+# GitHub Pages Jekyll Configuration
+title: Ahmadi Lham
+description: Academic Profile & Personal Blog
+author: Ahmadi Lham
+email: pacekonathyo@users.noreply.github.com
+url: https://pacekonathyo.github.io/ahmadi.lham
+github_username: pacekonathyo
+baseurl: /ahmadi.lham
+
+# Theme
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Markdown processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude files from being included in the final site
+exclude:
+  - .jekyll-cache
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
