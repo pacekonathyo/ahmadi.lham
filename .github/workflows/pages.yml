@@ -23,14 +23,16 @@ jobs:
         with:
           ruby-version: '3.2'
 
-      - name: Install dependencies
+      - name: Install dependencies and build
         run: |
-          gem install bundler
-          bundle install
-
-      - name: Build site with Jekyll
-        run: |
-          bundle exec jekyll build -d ./_site
+          if [ -f Gemfile ]; then
+            gem install bundler
+            bundle install
+            bundle exec jekyll build -d ./_site
+          else
+            gem install jekyll jekyll-feed jekyll-sitemap bundler
+            jekyll build -d ./_site
+          fi
 
       - name: Deploy to GitHub Pages (gh-pages branch)
         uses: peaceiris/actions-gh-pages@v3
